@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link
+            th:rel="stylesheet"
+            th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "
+    />
+    <link
+            rel="stylesheet"
+            type="text/css"
+            media="all"
+            th:href="@{/css/font-awesome.min.css}"
+    />
+    <link
+            rel="stylesheet"
+            type="text/css"
+            media="all"
+            th:href="@{/css/styles.css}"
+    />
+    <link
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
+    />
+    <meta charset="ISO-8859-1"/>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <h1>USERS</h1>
+<!--    <p th:text="${getUsers}" />-->
+
+    <a th:href="@{/login}">Login</a>
+</body>
+
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</html>

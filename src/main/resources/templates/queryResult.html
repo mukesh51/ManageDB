@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Query Result</title>
+</head>
+<body>
+    <h1>Query Result</h1>
+<!--    <p th:text="${result}" />-->
+<!--   <p th:text="${result}" />-->
+<!--    <p th:if="${result instanceof T(java.lang.String)}" th:text="${result}"></p>-->
+<!--    <table th:if="${#lists.isEmpty(result)}">-->
+<!--    <table th:if="${result instanceof T(java.util.List)}">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>User ID</th>-->
+<!--                <th>Email</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            <tr th:each="user : ${result}">-->
+<!--                <td th:text="${user.user_id}"></td>-->
+<!--                <td th:text="${user.email}"></td>-->
+
+<!--            </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <!-- Render table headers dynamically -->
+                <th th:each="column : ${columns}" th:text="${column}" scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Render table rows dynamically -->
+            <tr th:each="row : ${result}" scope="row">
+                <td th:each="column : ${columns}" th:text="${row[column.toString()]}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/queryHome/">Go back to Query Executor</a>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
